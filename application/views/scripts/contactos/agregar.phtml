@@ -1,0 +1,9 @@
+<?php if(!$this->loggedIn){ 
+     header("Location: /user/");
+}
+?>
+<div id="form_agregar">
+    <h2>Agregar un contacto</h2>
+    <? echo $this->form; ?>
+    <a href="/contactos/listar/" class="volver"><span class="label notice">&laquo; Volver</span></a>
+</div>

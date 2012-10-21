@@ -1,0 +1,45 @@
+<?php if(!$this->loggedIn){ 
+     header("Location: /user/");
+}
+?>
+<h2 class="contactos">Contactos</h2>
+<div id="agenda">
+    <table class="zebra-striped" id="tablaDeContactos">
+        <thead>
+            <tr>
+                <th class="blue header">Nombre</th>
+                <th class="blue" width="90"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if(count($this->paginador)) { 
+                foreach($this->paginador as $cto ){
+                ?>
+            <tr>
+                <td><a href="/contactos/ver/id/<? echo $cto->id; ?>"><? echo $cto->nombre; ?></a></td>
+                <td align="center">
+                    <a href="/contactos/actualizar/id/<? echo $cto->id; ?>">
+                        Editar
+                    </a>
+                    <span>-</span>
+                    <a href="/contactos/eliminar/id/<? echo $cto->id; ?>">
+                        Borrar
+                    </a>
+                </td>
+            </tr>
+            <?php 
+                }
+            }  else { ?>
+            <tr>
+                <td colspan="3">
+                    No tienes amigos <span class="label warning">: (</span>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+    <a href="/contactos/agregar/"><img src="/img/add_cto.png" alt="" /></a>
+    <?php if(count($this->paginador)) { 
+        echo $this->paginador;
+    } ?>
+</div>

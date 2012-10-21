@@ -1,0 +1,40 @@
+<?php if(!$this->loggedIn){ 
+     header("Location: /user/");
+    
+}
+?>
+<div id="ver_contacto">
+    
+    <div class="img_cto"></div>
+    <div class="data_cto">
+        <h2><?php echo $this->contacto['nombre']; ?></h2>
+        <ul class="datos">
+            <li>
+                <img src="/img/cto_fono.png" alt="" />
+                <span>
+                    <a href="tel:<? echo $this->contacto['fono']; ?>">
+                        <? echo $this->contacto['fono']; ?>
+                    </a>
+                </span>
+            </li>
+            <li>
+                <img src="/img/cto_email.png" alt="" />
+                <span>
+                    <a href="mailto:<? echo $this->contacto['email']; ?>">
+                        <? echo $this->contacto['email']; ?>
+                    </a>
+                </span>
+            </li>
+            <li>
+                <img src="/img/cto_dire.png" alt="" />
+                <span>
+                    <a href="http://maps.google.com/maps?q=<? echo $this->contacto['direccion']; ?>" target="_blank">
+                        <? echo $this->contacto['direccion']; ?>
+                    </a>
+                </span>
+            </li>
+        <ul>
+    </div>
+    
+    <a href="/contactos/listar/" class="volver"><span class="label notice">&laquo; Volver</span></a>
+</div>

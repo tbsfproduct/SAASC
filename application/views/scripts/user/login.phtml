@@ -1,0 +1,77 @@
+<?php if(!$this->loggedIn){ ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login :: Zend Framework &raquo; Agenda web :: Iván Olivares R.</title>
+    <meta name="description" content="Agenda web desarrollada con ZendFramework y Bootstrap, from twitter.">
+    <meta name="author" content="Iván Olivares R.">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+    <!-- Stylesheets Bootstrap -->
+    <link href="/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/override_defaults.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Stylesheets personalizados -->
+    <link href="/css/agenda.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Stylesheets Login -->
+    <link href="/css/login.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
+    <!-- jQuery-UI -->
+    <script type="text/javascript" src="/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="/js/jquery.backgroundPosition.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+  </head>
+
+  <body>
+
+    <div id="suspender_up"></div>
+        <div id="contenido">
+            <div class="login">
+                <div class="shield">
+                <img alt="login" src="/img/design_08.png" class="form-title" />
+                <span class="form-box-top">&nbsp;</span>
+                <div class="form-box-content">
+                    <div class="the-username the-username-focus">
+                        <img src="/img/user.png" align="absmiddle" />
+                    </div>
+                    <div class="the-password">
+                        <? echo $this->form_login; ?> 
+                    </div>
+                </div>
+                <span class="form-box-bottom">&nbsp;</span>
+                <div class="back">
+                    <p class="left">
+                            <a href="#" class="try-again">
+                                    <img src="/img/try-again.png" border="0" /> <br />
+                                    Login
+                            </a>
+                    </p>
+                    <p class="right">
+                            <a href="#" class="suspender">
+                                    <img src="/img/back-article.png" border="0" /> <br />
+                                    Suspender
+                            </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>
+<? } else {
+    header("Location: /");
+} ?>
